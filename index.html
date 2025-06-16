@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GUESTS LIST</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+</head>
+
+<body>
+
+    <header class="text-center my-8">
+        <h1 class="text-2xl font-bold">Guests List Manager</h1>
+    </header>
+
+    <section class="shadow shadow-lg border border-rounded border-gray-200 max-w-md mx-auto p-8">
+        <form id="guestform">
+            <div class="relative z-0 w-full mb-5 group">
+                <label for="type" class="block mb-2 text-sm font-medium text-gray-900">Select guest Category</label>
+                <select id="type"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                    <option selected>Guest Category</option>
+                    <option value="Family">Family</option>
+                    <option value="Friend">Friend</option>
+                    <option value="Collegue">Collegue</option>
+                </select>
+            </div>
+
+            <div class="relative z-0 w-full mb-5 group">
+                <input type="text" name="guestName" id="guestName"
+                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                    placeholder="" required />
+                <label for="guestName"
+                    class="peer-focus:font-medium absolute text-sm text-gray-500  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Enter guest-name</label>
+            </div>
+
+            <div class="relative z-0 w-full mb-5 group">
+                <input type="datetime-local" name="Time" id="time"
+                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                    placeholder="" required />
+                <label for="time"
+                    class="peer-focus:font-medium absolute text-sm text-gray-500  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Time</label>
+            </div>
+
+            <div class="relative z-0 w-full mb-5 group hidden">
+                <label for="type" class="block mb-2 text-sm font-medium text-gray-900">Select guest-category</label>
+                <select id="guest-category"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                </select>
+            </div>
+
+
+            <button type="submit"
+                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add Guest</button>
+        </form>
+
+    </section>
+
+
+    <section class="mx-auto max-w-4xl my-8">
+
+        <h2 class="text-center font-bold my-2 text-2xl">Guest List</h2>
+
+        <div class="relative overflow-x-auto">
+            <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                    <tr>
+                        <th scope="col" class="px-6 py-3">
+                            #
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                            Guest Name
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                            Time
+                        </th>
+                    </tr>
+                </thead>
+                <tbody id="guestList">
+                </tbody>
+            </table>
+        </div>
+
+    </section>
+
+</body>
+<script src="./index.js"></script>
+</html>
